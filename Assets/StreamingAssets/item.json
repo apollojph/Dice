@@ -1,0 +1,143 @@
+[
+  {
+    "id": 0,
+    "title": "出獄卡",
+    "value": 6,
+    "stats": {
+      "power": 1,
+      "defence": 4,
+      "vitality": 2
+    },
+    "description": "Gloves made from steel!",
+    "stackable": false,
+    "rarity": 2,
+    "slug": "steel_gloves"
+  },
+
+  {
+    "id": 1,
+    "title": "監獄卡",
+    "value": 55,
+    "stats": {
+      "power": 100,
+      "defence": 5,
+      "vitality": 30
+    },
+    "description": "It's a stick that's pretty great!",
+    "stackable": false,
+    "rarity": 5,
+    "slug": "the_great_stick"
+  },
+  {
+    "id": 2,
+    "title": "單數卡",
+    "value": 55,
+    "stats": {
+      "power": 100,
+      "defence": 5,
+      "vitality": 30
+    },
+    "description": "It's a stick that's pretty great!",
+    "stackable": false,
+    "rarity": 5,
+    "slug": "cursorSword_gold"
+  },
+  {
+    "id": 3,
+    "title": "雙數卡",
+    "value": 55,
+    "stats": {
+      "power": 100,
+      "defence": 5,
+      "vitality": 30
+    },
+    "description": "It's a stick that's pretty great!",
+    "stackable": false,
+    "rarity": 5,
+    "slug": "card_2_two_four_six"
+  },
+  {
+    "id": 4,
+    "title": "暫停卡",
+    "value": 55,
+    "stats": {
+      "power": 100,
+      "defence": 5,
+      "vitality": 30
+    },
+    "description": "It's a stick that's pretty great!",
+    "stackable": false,
+    "rarity": 5,
+    "slug": "card_1_stop_AI_turn"
+  },
+  {
+    "id": 5,
+    "title": "強制PK卡",
+    "value": 55,
+    "stats": {
+      "power": 100,
+      "defence": 5,
+      "vitality": 30
+    },
+    "description": "It's a stick that's pretty great!",
+    "stackable": false,
+    "rarity": 5,
+    "slug": "cursorGauntlet_grey"
+  },
+  {
+    "id": 6,
+    "title": "兩倍卡",
+    "value": 55,
+    "stats": {
+      "power": 100,
+      "defence": 5,
+      "vitality": 30
+    },
+    "description": "It's a stick that's pretty great!",
+    "stackable": false,
+    "rarity": 5,
+    "slug": "card_2_digital_double"
+  },
+  {
+    "id": 7,
+    "title": "指定數字卡",
+    "value": 55,
+    "stats": {
+      "power": 100,
+      "defence": 5,
+      "vitality": 30
+    },
+    "description": "It's a stick that's pretty great!",
+    "stackable": false,
+    "rarity": 5,
+    "slug": "card_2_specify_digital"
+  },
+  {
+    "id": 8,
+    "title": "回頭卡",
+    "value": 55,
+    "stats": {
+      "power": 100,
+      "defence": 5,
+      "vitality": 30
+    },
+    "description": "It's a stick that's pretty great!",
+    "stackable": false,
+    "rarity": 5,
+    "slug": "cursorHand_blue"
+  },
+  {
+    "id": 9,
+    "title": "金錢雙倍卡",
+    "value": 55,
+    "stats": {
+      "power": 100,
+      "defence": 5,
+      "vitality": 30
+    },
+    "description": "It's a stick that's pretty great!",
+    "stackable": false,
+    "rarity": 5,
+    "slug": "card_2_$_double"
+  }
+]
