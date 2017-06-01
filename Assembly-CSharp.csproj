@@ -57,6 +57,7 @@
      <Compile Include="Assets\LitJson\ParserToken.cs" />
      <Compile Include="Assets\Scripts\AIController.cs" />
      <Compile Include="Assets\Scripts\AlphaChage.cs" />
+     <Compile Include="Assets\Scripts\CardEffect.cs" />
      <Compile Include="Assets\Scripts\CardManage.cs" />
      <Compile Include="Assets\Scripts\GainCard.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />

@@ -73,7 +73,7 @@ public class Slot : MonoBehaviour, IDropHandler
 
 			//useCardsIns.transform.GetChild (0).GetComponent<Text> ().text = "";
 
-			GameManager.usedCards [GameManager.cardManaged] = useCardsIns.GetComponent<Image> ().sprite;
+			GameManager.useCardName[GameManager.cardManaged] = useCardsIns.GetComponent<Image> ().sprite.name;
 			GameManager.cardManaged++;
 
 			print ("Card manage");
