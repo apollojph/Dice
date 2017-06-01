@@ -11,12 +11,12 @@
     "description": "Gloves made from steel!",
     "stackable": false,
     "rarity": 2,
-    "slug": "steel_gloves"
+    "slug": "S_card_1_player prison"
   },
 
   {
     "id": 1,
-    "title": "監獄卡",
+    "title": "入獄卡",
     "value": 55,
     "stats": {
       "power": 100,
@@ -26,7 +26,7 @@
     "description": "It's a stick that's pretty great!",
     "stackable": false,
     "rarity": 5,
-    "slug": "the_great_stick"
+    "slug": "S_card_1_AI prison"
   },
   {
     "id": 2,
@@ -40,7 +40,7 @@
     "description": "It's a stick that's pretty great!",
     "stackable": false,
     "rarity": 5,
-    "slug": "cursorSword_gold"
+    "slug": "S_card_1_one-three-five"
   },
   {
     "id": 3,
@@ -54,7 +54,7 @@
     "description": "It's a stick that's pretty great!",
     "stackable": false,
     "rarity": 5,
-    "slug": "card_2_two_four_six"
+    "slug": "S_card_1_two-four-six"
   },
   {
     "id": 4,
@@ -68,7 +68,7 @@
     "description": "It's a stick that's pretty great!",
     "stackable": false,
     "rarity": 5,
-    "slug": "card_1_stop_AI_turn"
+    "slug": "S_card_1_stop AI turn"
   },
   {
     "id": 5,
@@ -82,11 +82,11 @@
     "description": "It's a stick that's pretty great!",
     "stackable": false,
     "rarity": 5,
-    "slug": "cursorGauntlet_grey"
+    "slug": "S_card_1_PK"
   },
   {
     "id": 6,
-    "title": "兩倍卡",
+    "title": "雙倍卡",
     "value": 55,
     "stats": {
       "power": 100,
@@ -96,7 +96,7 @@
     "description": "It's a stick that's pretty great!",
     "stackable": false,
     "rarity": 5,
-    "slug": "card_2_digital_double"
+    "slug": "S_card_2_digital double"
   },
   {
     "id": 7,
@@ -110,11 +110,11 @@
     "description": "It's a stick that's pretty great!",
     "stackable": false,
     "rarity": 5,
-    "slug": "card_2_specify_digital"
+    "slug": "S_card_2_specify digital"
   },
   {
     "id": 8,
-    "title": "回頭卡",
+    "title": "對換位置卡",
     "value": 55,
     "stats": {
       "power": 100,
@@ -124,7 +124,7 @@
     "description": "It's a stick that's pretty great!",
     "stackable": false,
     "rarity": 5,
-    "slug": "cursorHand_blue"
+    "slug": "S_card_2_position"
   },
   {
     "id": 9,
@@ -138,6 +138,6 @@
     "description": "It's a stick that's pretty great!",
     "stackable": false,
     "rarity": 5,
-    "slug": "card_2_$_double"
+    "slug": "S_card_2_$ double"
   }
 ]

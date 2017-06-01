@@ -61,14 +61,17 @@ public class Slot : MonoBehaviour, IDropHandler
 	{
 		if (GameManager.cardManaged < 3) 
 		{
+            /*
 			droppedItem.amount--;
 			droppedItem.transform.GetChild (0).GetComponent<Text> ().text = droppedItem.amount.ToString();
+            */
 
 			GameObject useCardsIns = Instantiate (itemObject) as GameObject;
 			useCardsIns.transform.SetParent (cardManage.slots[GameManager.cardManaged].transform);
 			useCardsIns.transform.position = cardManage.slots [GameManager.cardManaged].transform.position;
 			useCardsIns.GetComponent<RectTransform>().localScale = Vector3.one;
-			useCardsIns.transform.GetChild (0).GetComponent<Text> ().text = "";
+
+			//useCardsIns.transform.GetChild (0).GetComponent<Text> ().text = "";
 
 			GameManager.usedCards [GameManager.cardManaged] = useCardsIns.GetComponent<Image> ().sprite;
 			GameManager.cardManaged++;

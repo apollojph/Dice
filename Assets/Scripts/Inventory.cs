@@ -39,6 +39,7 @@ public class Inventory : MonoBehaviour
 	{
 		Item itemToAdd = database.FetchItemByID (id);
 
+        /*
 		if (itemToAdd.Stackable && CheckIfItemIsInventory (itemToAdd))
 		{
 			for (int i = 0; i < items.Count; i++) 
@@ -51,7 +52,9 @@ public class Inventory : MonoBehaviour
 				}
 			}
 		} 
-		else if (!itemToAdd.Stackable && !CheckIfItemIsInventory (itemToAdd))
+        */
+
+		if (!CheckIfItemIsInventory (itemToAdd))
 		{
 			for (int i = 0; i < items.Count; i++) 
 			{
@@ -67,11 +70,13 @@ public class Inventory : MonoBehaviour
 					itemObj.GetComponent<Image> ().sprite = itemToAdd.Sprite;
 					itemObj.name = itemToAdd.Title;
 
+                    /*
 					if (items [i].Stackable) 
 					{
 						itemObj.GetComponent<ItemData> ().amount++;
 						itemObj.transform.GetChild (0).GetComponent<Text> ().text = itemObj.GetComponent<ItemData> ().amount.ToString ();
 					}
+                    */
 
 					break;
 				}
