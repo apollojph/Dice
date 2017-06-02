@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour 
 {
-	public enum PlayerState {Stand, Moving, ToAI};
+	public enum PlayerState {Stand, Moving, ToAI, DoubleMove, OddMove, EvenMove};
 	public PlayerState playerState;
 	public GameObject playerModel;
 	public Vector3 direction = Vector3.forward;
@@ -51,6 +51,47 @@ public class PlayerController : MonoBehaviour
 	public void Move()
 	{
 		step = Random.Range (1, 6);
+
+        if(playerState == PlayerState.DoubleMove)
+        {
+            step *= 2;
+        }
+
+        if (playerState == PlayerState.OddMove)
+        {
+            if (step % 2 != 1)
+            {
+                step = Random.Range(1, 6);
+            }
+        }
+
+        if (playerState == PlayerState.EvenMove)
+        {
+            if (step % 2 != 0)
+            {
+                step = Random.Range(1, 6);
+            }
+        }
+
+        /*
+        switch (playerState)
+        {
+            case PlayerState.DoubleMove:
+                
+                break;
+
+            case PlayerState.OddMove:
+                
+                break;
+
+            case PlayerState.EvenMove:
+                if (step % 2 != 0)
+                {
+                    step = Random.Range(1, 6);
+                }
+                break;
+        }
+        */
 
 		if (step == 1) 
 		{
