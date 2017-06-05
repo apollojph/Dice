@@ -8,9 +8,19 @@ using System;
 public class CardEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject player;
+    public GameObject AI;
+    public GameObject[] prison;
+    public GameObject[] prisonOutPoint;
+    public GameObject orderNumPanel;
 
     private bool selected = false;
     private string currentCardName;
+
+    void Awake()
+    {
+        prison = GameObject.FindGameObjectsWithTag("Prison");
+        prisonOutPoint = GameObject.FindGameObjectsWithTag("PrisonOutPoint");
+    }
 
 	public void SelectCard()
     {
@@ -34,6 +44,8 @@ public class CardEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         switch(currentCardName)
         {
             case "card_1_AI prison":
+                int prisonNum = UnityEngine.Random.Range(0, prison.Length);
+                AI.transform.position = prison[prisonNum].transform.position;
                 break;
             case "card_1_one_three_five":
                 player.GetComponent<PlayerController>().playerState = PlayerController.PlayerState.OddMove;
@@ -41,8 +53,11 @@ public class CardEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             case "card_1_PK":
                 break;
             case "card_1_player prison":
+                int prisonOutNum = UnityEngine.Random.Range(0, prisonOutPoint.Length);
+                player.transform.position = prison[prisonOutNum].transform.position;
                 break;
             case "card_1_stop_AI_turn":
+                AI.GetComponent<AIController>().aiState = AIController.AIState.Stop;
                 break;
             case "card_1_two_four_six":
                 player.GetComponent<PlayerController>().playerState = PlayerController.PlayerState.EvenMove;
@@ -54,8 +69,13 @@ public class CardEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                 player.GetComponent<PlayerController>().playerState = PlayerController.PlayerState.DoubleMove;
                 break;
             case "card_2_position":
+                Vector3 playerTemp = player.transform.position;
+                Vector3 AITemp = AI.transform.position;
+                player.transform.position = AITemp;
+                AI.transform.position = playerTemp;
                 break;
             case "card_2_specify_digital":
+                orderNumPanel.SetActive(true);
                 break;
         }
     }
@@ -72,6 +92,14 @@ public class CardEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         Animator animator = eventData.pointerEnter.GetComponent<Animator>();
         animator.SetBool("Normal", true);
         animator.SetBool("Highlighted", false);
+    }
+
+    public void OrderStep(int num)
+    {
+        player.GetComponent<PlayerController>().step = num;
+        player.GetComponent<PlayerController>().playerState = PlayerController.PlayerState.OrderMove;
+        orderNumPanel.SetActive(false);
+        player.GetComponent<PlayerController>().SetStep();
     }
 
     /*

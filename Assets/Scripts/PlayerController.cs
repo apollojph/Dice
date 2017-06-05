@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour 
 {
-	public enum PlayerState {Stand, Moving, ToAI, DoubleMove, OddMove, EvenMove};
+	public enum PlayerState {Stand, Moving, ToAI, DoubleMove, OddMove, EvenMove, OrderMove, Stop};
 	public PlayerState playerState;
 	public GameObject playerModel;
 	public Vector3 direction = Vector3.forward;
@@ -45,12 +45,20 @@ public class PlayerController : MonoBehaviour
 			AI.GetComponent<AIController> ().aiState = AIController.AIState.Stand;
 			rollDiceBtn.SetActive (true);
 		}
-	}
+
+        if (playerState == PlayerState.Stop)
+        {
+            ToAI();
+        }
+    }
 
 
-	public void Move()
+	public void SetStep()
 	{
-		step = Random.Range (1, 6);
+        if(playerState != PlayerState.OrderMove)
+        {
+            step = Random.Range(1, 6);
+        }
 
         if(playerState == PlayerState.DoubleMove)
         {
@@ -236,7 +244,7 @@ public class PlayerController : MonoBehaviour
 		{
 			Vector3 pos = transform.position;
 			pos.z = other.position.z;
-			transform.position = pos;
+            transform.position = pos;
 
 			playerState = PlayerState.Stand;
 			step--;
@@ -376,7 +384,6 @@ public class PlayerController : MonoBehaviour
 		yield return new WaitForSeconds(waitTime);  
 		playerState = PlayerState.Moving;
 	}    
-
 }
 
 

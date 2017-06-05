@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class AIController : MonoBehaviour 
 {
-	public enum AIState {Stand, Moving, ToPlayer};
+	public enum AIState {Stand, Moving, ToPlayer, Stop};
 	public AIState aiState;
 	public GameObject AIModel;
 	public Vector3 direction = Vector3.forward;
@@ -32,6 +32,11 @@ public class AIController : MonoBehaviour
 			player.GetComponent<PlayerController> ().playerState = PlayerController.PlayerState.Stand;
 			Move ();
 		}
+
+        if(aiState == AIState.Stop)
+        {
+            ToPlayer();
+        }
 
 	}
 
@@ -162,7 +167,7 @@ public class AIController : MonoBehaviour
 		{
 			Vector3 pos = transform.position;
 			pos.z = other.position.z;
-			transform.position = pos;
+            transform.position = pos;
 
 			aiState = AIState.Stand;
 			step--;
@@ -226,25 +231,25 @@ public class AIController : MonoBehaviour
 
 	void CharacterRotate()
 	{
-		float zRotate = 0f;
+        float xRotate = 0f;
 
-		if (direction == Vector3.forward) 
-		{
-			zRotate = 0f;
-		}
-		if (direction == Vector3.right) 
-		{
-			zRotate = 90f;
-		}
-		if (direction == Vector3.left) 
-		{
-			zRotate = 270f;
-		}
+        if (direction == Vector3.forward)
+        {
+            xRotate = -90f;
+        }
+        if (direction == Vector3.right)
+        {
+            xRotate = -180f;
+        }
+        if (direction == Vector3.left)
+        {
+            xRotate = 0f;
+        }
 
-		Quaternion tempRotation = Quaternion.identity;
-		tempRotation.eulerAngles = new Vector3 (0f, 0f, zRotate);
-		AIModel.transform.localRotation = tempRotation;
-	}
+        Quaternion tempRotation = Quaternion.identity;
+        tempRotation.eulerAngles = new Vector3(xRotate, 90f, 90f);
+        AIModel.transform.localRotation = tempRotation;
+    }
 
 	void ToPlayer()
 	{
