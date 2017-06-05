@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System;
 
-public class CardEffect : MonoBehaviour
+public class CardEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject player;
 
@@ -15,12 +17,12 @@ public class CardEffect : MonoBehaviour
         if(!selected)
         {
             selected = !selected;
-            GetComponent<Animator>().SetBool("Click", true);
+            GetComponent<Animator>().SetBool("Pressed", true);
         }
         else
         {
             selected = !selected;
-            GetComponent<Animator>().SetBool("Click", false);
+            GetComponent<Animator>().SetBool("Pressed", false);
             UseCard();
         }
     }
@@ -57,4 +59,26 @@ public class CardEffect : MonoBehaviour
                 break;
         }
     }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Animator animator = eventData.pointerEnter.GetComponent<Animator>();
+        animator.SetBool("Normal", false);
+        animator.SetBool("Highlighted", true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Animator animator = eventData.pointerEnter.GetComponent<Animator>();
+        animator.SetBool("Normal", true);
+        animator.SetBool("Highlighted", false);
+    }
+
+    /*
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        Animator animator = eventData.pointerPressRaycast.gameObject.GetComponent<Animator>();
+        animator.SetBool("Pressed", true);
+    }
+    */
 }

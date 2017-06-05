@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour 
 {
@@ -62,4 +63,24 @@ public class GameManager : MonoBehaviour
 		coinsText.text = coins.ToString ();
 		diamondsText.text = diamonds.ToString ();
 	}
+
+    /*
+    public void OnPointerEnter(BaseEventData data)
+    {
+        Animator animator = ((PointerEventData)data).pointerEnter.GetComponent<Animator>();
+        animator.SetTrigger("Highlighted");
+    }
+
+    public void OnPointerExit(BaseEventData data)
+    {
+        Animator animator = ((PointerEventData)data).pointerEnter.gameObject.GetComponent<Animator>();
+        animator.SetTrigger("Highlighted");
+    }
+
+    public void OnPointerDown(BaseEventData data)
+    {
+        Animator animator = ((PointerEventData)data).pointerPress.GetComponent<Animator>();
+        animator.SetTrigger("Pressed");
+    }
+    */
 }
